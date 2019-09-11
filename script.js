@@ -13,8 +13,13 @@ function imprimirPendiente(pendiente, index) {
                 <i class="fa fa-check"></i>
             </div>
             <div class="descripcion">`+ pendiente.descripcion + `</div>
+            <i class="fa fa-times" onclick="eliminarPendiente(`+ index + `)"></i>
         </li>`
     );
+}
+function eliminarPendiente(index) {
+    pendientes.splice(index, 1);
+    imprimirTodosLosPendientes();
 }
 
 function estaCompletado(completado) {
@@ -24,6 +29,9 @@ function estaCompletado(completado) {
         return 'class="pendiente"';
     }
 }
+
+
+
 
 function marcarCompletado(index) {
     // var pendientesInterfaz = document.getElementsByClassName("pendiente");
@@ -37,16 +45,16 @@ function imprimirTodosLosPendientes() {
     pendientes.forEach(imprimirPendiente);
 }
 
-function nuevoElemento(){
+function nuevoElemento() {
     var campo = document.getElementById("item").value;
     var nombre = { descripcion: campo, completado: false };
     if (campo === '') {
         alert("Escribe algo plis:(");
-      } else {
-        pendientes.push(nombre);  
+    } else {
+        pendientes.push(nombre);
         imprimirTodosLosPendientes();
-      }
- 
+    }
+
 }
 
 pendientes.forEach(imprimirPendiente);
