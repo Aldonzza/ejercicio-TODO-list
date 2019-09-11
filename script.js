@@ -25,6 +25,9 @@ function estaCompletado(completado) {
     }
 }
 
+
+
+
 function marcarCompletado(index) {
     // var pendientesInterfaz = document.getElementsByClassName("pendiente");
     // pendientesInterfaz[index].classList.toggle("done");
@@ -37,16 +40,16 @@ function imprimirTodosLosPendientes() {
     pendientes.forEach(imprimirPendiente);
 }
 
-function nuevoElemento(){
+function nuevoElemento() {
     var campo = document.getElementById("item").value;
     var nombre = { descripcion: campo, completado: false };
     if (campo === '') {
         alert("Escribe algo plis:(");
-      } else {
-        pendientes.push(nombre);  
+    } else {
+        pendientes.push(nombre);
         imprimirTodosLosPendientes();
-      }
- 
+    }
+
 }
 
 pendientes.forEach(imprimirPendiente);
